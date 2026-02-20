@@ -1,10 +1,16 @@
 spring:
-  application:
-    name: eboutique
   datasource:
-    username: root
-    password: passer123
-    url: jdbc:mysql://localhost:3306/e_boutique
+    url: jdbc:mysql://localhost:3306/eboutique_smb?useSSL=false&serverTimezone=UTC
+    username: eboutique_seynabou
+    password: 1234
+
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: create   # ← crée toutes les tables à la première exécution
+    show-sql: true       # ← affiche les requêtes SQL dans la console
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+
+server:
+  port: 8080
